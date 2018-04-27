@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity SurveyQuestion.
+    -->
+    <changeSet id="20180426134828-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="survey_id"
+                                 baseTableName="survey_question"
+                                 constraintName="fk_survey_question_survey_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="survey_question"/>
+
+        <addForeignKeyConstraint baseColumnNames="onsite_id"
+                                 baseTableName="survey_question"
+                                 constraintName="fk_survey_question_onsite_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="onsite"/>
+
+        <addForeignKeyConstraint baseColumnNames="department_id"
+                                 baseTableName="survey_question"
+                                 constraintName="fk_survey_question_department_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="department"/>
+
+    </changeSet>
+</databaseChangeLog>

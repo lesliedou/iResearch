@@ -1,0 +1,203 @@
+
+entity ConfigAcl {
+    modName String ,
+    funcName String ,
+    aclList TextBlob
+}
+
+entity Acl {
+    modName String ,
+    funcName String ,
+    aclList TextBlob
+}
+
+entity Department  {
+   deptName String,//部门名称
+   deptCode String,//编码
+   deptType String,//类型
+   contactPerson String,//联系人
+   contactInfo String //联系人详情
+}
+
+entity UploadInfo {
+   infoType String,//类型
+   subj String,
+   content String
+}
+
+entity MonthlyReport  {
+   monthName String,//类型
+   report String,//类型
+   reportTime String,//类型
+   reportDate String,//类型
+   count String,//类型
+   surveyDeptCount String,//类型
+   surveyCount String,//类型
+   surveyTargetCountJson String,//类型
+   surveyTargetCountTotal String,//类型
+   surveyTypeCountJson String,//类型
+   surveyTypeCountTotal String,//类型
+   questionCcountJson String,//类型
+   questionCountTotal String,//类型
+   questionClosedCountJson String,//类型
+   questionClosedCountTota String,//类型
+   proposalCountJson String,//类型
+   proposalCountTotal String
+}
+entity Notes  {
+   subject String,
+   content String
+
+}
+
+entity Onsite{
+   report String,
+   onsiteTime String,
+   accompany String,
+   onsiteAddr String,
+   onsiteInfo String,
+   targetId String,
+   targetName String,
+   surveyType String,
+   infoType String,
+   adviceDeptId String,
+   adviceReadTime String,
+   adviceReadUuid String,
+   adviceStatus String
+
+}
+
+entity OnsiteProcess  {
+   confirm String,
+   remarks String
+}
+
+entity Role  {
+   roleName String,
+   remarks String
+}
+
+entity Survey  {
+   surveyType String,
+   targetTypeReadme  String,
+   targetType  String,
+   targetContactInfo  String,
+   targetContactPerson  String,
+   targetName  String,
+   targetId  String,
+   deptContactInfo  String,
+   deptContactPerson  String,
+   surveyDate  String
+}
+
+entity SurveyQuestion  {
+   targetId  String,
+   targetName  String,
+   surveyCode  String,
+   subSeq  String,
+   report  String,
+   reportTime  String,
+   questionSummary  String,
+   questionType String,
+   questionInfo  String,
+   deptPlan  String,
+   deptPlanType  String,
+   deptPlanExtra  String,
+   questionStatus  String,
+   masterDeptId  String,
+   auxDeptId  String,
+   officePlan  String,
+   officePlanJson  String,
+   officeSubmitUuid String,
+   officeSubmitTime  String,
+   leaderConfirm  String,
+   leaderConfirmTime  String,
+   leaderRemarks  String,
+   leaderSubmitUuid  String,
+   leaderSubmitTime  String,
+   rstProcedure  String,
+   rstOutcome  String,
+   rstDate  String,
+   rstTarget String,
+   flowStatus  String,
+   inputDeptId  String,
+   inputUser  String,
+   inputPhone  String,
+   inputTime  String
+}
+
+entity SurveyQuestionFlow  {
+   confirm  String,
+   remarks String
+}
+
+
+entity SurveyQuestionIntf  {
+   TaskID String,
+   statusType  String,
+   ReturnTime String,
+   ReturnNote String,
+   CreateTime String,
+   AllEndTime  String,
+   CreateNote String,
+   EndTime String,
+   LastSolvingTime String,
+   SolvingNote  String,
+   EndNote String,
+   BanliResult String,
+   ExecuteDeptName String,
+   AssistantDeptName  String,
+   FeedBackNote String
+}
+
+entity Target  {
+   targetName String,
+   targetType String,
+   targetTypeReadme  String,
+   contactPerson String,
+   contactPhone  String,
+    contactEmail  String,
+    contactAddr String
+}
+
+entity Files  {
+   funcName String,
+  linkId String,
+  subId String,
+  subId2 String,
+  authStr String,
+  subType String,
+  fname String,
+  rawName String,
+  fsize String,
+  ftype String,
+  remarks String
+
+}
+
+
+
+relationship OneToOne {
+  Survey{department} to Department,
+  UploadInfo{department} to Department,
+  MonthlyReport{department} to Department,
+  Onsite{department} to Department,
+  OnsiteProcess{onsite} to Onsite,
+  SurveyQuestion{survey} to SurveyQuestion,
+  SurveyQuestion{onsite} to Onsite,
+  SurveyQuestion{department} to Department,
+  SurveyQuestionFlow{surveyQuestion} to SurveyQuestion,
+  SurveyQuestionIntf{surveyQuestion} to SurveyQuestion
+
+
+}
+
+
+paginate ConfigAcl,Acl,Department,UploadInfo ,MonthlyReport ,Notes,Onsite ,OnsiteProcess,Role,Survey ,SurveyQuestion,SurveyQuestionFlow,SurveyQuestionIntf,Target,Files  with infinite-scroll
+
+paginate ConfigAcl,Acl,Department,UploadInfo ,MonthlyReport ,Notes,Onsite ,OnsiteProcess,Role,Survey ,SurveyQuestion,SurveyQuestionFlow,SurveyQuestionIntf,Target,Files with pagination
+
+dto ConfigAcl,Acl,Department,UploadInfo ,MonthlyReport ,Notes,Onsite ,OnsiteProcess,Role,Survey ,SurveyQuestion,SurveyQuestionFlow,SurveyQuestionIntf,Target,Files with mapstruct
+
+service ConfigAcl,Acl,Department,UploadInfo ,MonthlyReport ,Notes,Onsite ,OnsiteProcess,Role,Survey ,SurveyQuestion,SurveyQuestionFlow,SurveyQuestionIntf,Target,Files with serviceClass
+

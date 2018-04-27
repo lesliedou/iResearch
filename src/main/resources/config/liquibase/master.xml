@@ -5,6 +5,29 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134818_added_entity_ConfigAcl.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134819_added_entity_Acl.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134820_added_entity_Department.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134821_added_entity_UploadInfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134822_added_entity_MonthlyReport.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134823_added_entity_Notes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134824_added_entity_Onsite.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134825_added_entity_OnsiteProcess.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134826_added_entity_Role.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134827_added_entity_Survey.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134828_added_entity_SurveyQuestion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134829_added_entity_SurveyQuestionFlow.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134830_added_entity_SurveyQuestionIntf.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134831_added_entity_Target.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134832_added_entity_Files.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180426134821_added_entity_constraints_UploadInfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134822_added_entity_constraints_MonthlyReport.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134824_added_entity_constraints_Onsite.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134825_added_entity_constraints_OnsiteProcess.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134827_added_entity_constraints_Survey.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134828_added_entity_constraints_SurveyQuestion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134829_added_entity_constraints_SurveyQuestionFlow.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426134830_added_entity_constraints_SurveyQuestionIntf.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
