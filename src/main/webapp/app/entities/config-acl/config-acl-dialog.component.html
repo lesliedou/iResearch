@@ -1,0 +1,40 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myConfigAclLabel" jhiTranslate="iResearchApp.configAcl.home.createOrEditLabel">Create or edit a Config Acl</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!configAcl.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="configAcl.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.configAcl.modName" for="field_modName">Mod Name</label>
+            <input type="text" class="form-control" name="modName" id="field_modName"
+                [(ngModel)]="configAcl.modName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.configAcl.funcName" for="field_funcName">Func Name</label>
+            <input type="text" class="form-control" name="funcName" id="field_funcName"
+                [(ngModel)]="configAcl.funcName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.configAcl.aclList" for="field_aclList">Acl List</label>
+            <textarea class="form-control" name="aclList" id="field_aclList"
+                [(ngModel)]="configAcl.aclList" ></textarea>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

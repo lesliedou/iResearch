@@ -1,0 +1,60 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTargetLabel" jhiTranslate="iResearchApp.target.home.createOrEditLabel">Create or edit a Target</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!target.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="target.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.target.targetName" for="field_targetName">Target Name</label>
+            <input type="text" class="form-control" name="targetName" id="field_targetName"
+                [(ngModel)]="target.targetName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.target.targetType" for="field_targetType">Target Type</label>
+            <input type="text" class="form-control" name="targetType" id="field_targetType"
+                [(ngModel)]="target.targetType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.target.targetTypeReadme" for="field_targetTypeReadme">Target Type Readme</label>
+            <input type="text" class="form-control" name="targetTypeReadme" id="field_targetTypeReadme"
+                [(ngModel)]="target.targetTypeReadme" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.target.contactPerson" for="field_contactPerson">Contact Person</label>
+            <input type="text" class="form-control" name="contactPerson" id="field_contactPerson"
+                [(ngModel)]="target.contactPerson" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.target.contactPhone" for="field_contactPhone">Contact Phone</label>
+            <input type="text" class="form-control" name="contactPhone" id="field_contactPhone"
+                [(ngModel)]="target.contactPhone" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.target.contactEmail" for="field_contactEmail">Contact Email</label>
+            <input type="text" class="form-control" name="contactEmail" id="field_contactEmail"
+                [(ngModel)]="target.contactEmail" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.target.contactAddr" for="field_contactAddr">Contact Addr</label>
+            <input type="text" class="form-control" name="contactAddr" id="field_contactAddr"
+                [(ngModel)]="target.contactAddr" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

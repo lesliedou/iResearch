@@ -1,0 +1,68 @@
+
+<div *ngIf="survey">
+    <h2><span jhiTranslate="iResearchApp.survey.detail.title">Survey</span> {{survey.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="iResearchApp.survey.surveyType">Survey Type</span></dt>
+        <dd>
+            <span>{{survey.surveyType}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.survey.targetTypeReadme">Target Type Readme</span></dt>
+        <dd>
+            <span>{{survey.targetTypeReadme}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.survey.targetType">Target Type</span></dt>
+        <dd>
+            <span>{{survey.targetType}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.survey.targetContactInfo">Target Contact Info</span></dt>
+        <dd>
+            <span>{{survey.targetContactInfo}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.survey.targetContactPerson">Target Contact Person</span></dt>
+        <dd>
+            <span>{{survey.targetContactPerson}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.survey.targetName">Target Name</span></dt>
+        <dd>
+            <span>{{survey.targetName}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.survey.targetId">Target Id</span></dt>
+        <dd>
+            <span>{{survey.targetId}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.survey.deptContactInfo">Dept Contact Info</span></dt>
+        <dd>
+            <span>{{survey.deptContactInfo}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.survey.deptContactPerson">Dept Contact Person</span></dt>
+        <dd>
+            <span>{{survey.deptContactPerson}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.survey.surveyDate">Survey Date</span></dt>
+        <dd>
+            <span>{{survey.surveyDate}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.survey.department">Department</span></dt>
+        <dd>
+            <div *ngIf="survey.departmentId">
+                <a [routerLink]="['/department', survey.departmentId]">{{survey.departmentId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'survey/'+ survey.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

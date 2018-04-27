@@ -1,0 +1,36 @@
+
+<div *ngIf="onsiteProcess">
+    <h2><span jhiTranslate="iResearchApp.onsiteProcess.detail.title">Onsite Process</span> {{onsiteProcess.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="iResearchApp.onsiteProcess.confirm">Confirm</span></dt>
+        <dd>
+            <span>{{onsiteProcess.confirm}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsiteProcess.remarks">Remarks</span></dt>
+        <dd>
+            <span>{{onsiteProcess.remarks}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsiteProcess.onsite">Onsite</span></dt>
+        <dd>
+            <div *ngIf="onsiteProcess.onsiteId">
+                <a [routerLink]="['/onsite', onsiteProcess.onsiteId]">{{onsiteProcess.onsiteId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'onsite-process/'+ onsiteProcess.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

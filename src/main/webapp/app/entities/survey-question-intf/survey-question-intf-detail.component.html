@@ -1,0 +1,88 @@
+
+<div *ngIf="surveyQuestionIntf">
+    <h2><span jhiTranslate="iResearchApp.surveyQuestionIntf.detail.title">Survey Question Intf</span> {{surveyQuestionIntf.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.taskID">Task ID</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.taskID}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.statusType">Status Type</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.statusType}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.returnTime">Return Time</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.returnTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.returnNote">Return Note</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.returnNote}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.createTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.allEndTime">All End Time</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.allEndTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.createNote">Create Note</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.createNote}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.endTime">End Time</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.endTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.lastSolvingTime">Last Solving Time</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.lastSolvingTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.solvingNote">Solving Note</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.solvingNote}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.endNote">End Note</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.endNote}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.banliResult">Banli Result</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.banliResult}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.executeDeptName">Execute Dept Name</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.executeDeptName}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.assistantDeptName">Assistant Dept Name</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.assistantDeptName}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.feedBackNote">Feed Back Note</span></dt>
+        <dd>
+            <span>{{surveyQuestionIntf.feedBackNote}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestionIntf.surveyQuestion">Survey Question</span></dt>
+        <dd>
+            <div *ngIf="surveyQuestionIntf.surveyQuestionId">
+                <a [routerLink]="['/survey-question', surveyQuestionIntf.surveyQuestionId]">{{surveyQuestionIntf.surveyQuestionId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'survey-question-intf/'+ surveyQuestionIntf.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

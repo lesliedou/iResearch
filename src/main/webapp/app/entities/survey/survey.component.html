@@ -1,0 +1,90 @@
+<div>
+    <h2>
+        <span jhiTranslate="iResearchApp.survey.home.title">Surveys</span>
+        <button class="btn btn-primary float-right jh-create-entity create-survey" [routerLink]="['/', { outlets: { popup: ['survey-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="iResearchApp.survey.home.createLabel">
+            Create new Survey
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="surveys">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="surveyType"><span jhiTranslate="iResearchApp.survey.surveyType">Survey Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="targetTypeReadme"><span jhiTranslate="iResearchApp.survey.targetTypeReadme">Target Type Readme</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="targetType"><span jhiTranslate="iResearchApp.survey.targetType">Target Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="targetContactInfo"><span jhiTranslate="iResearchApp.survey.targetContactInfo">Target Contact Info</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="targetContactPerson"><span jhiTranslate="iResearchApp.survey.targetContactPerson">Target Contact Person</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="targetName"><span jhiTranslate="iResearchApp.survey.targetName">Target Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="targetId"><span jhiTranslate="iResearchApp.survey.targetId">Target Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="deptContactInfo"><span jhiTranslate="iResearchApp.survey.deptContactInfo">Dept Contact Info</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="deptContactPerson"><span jhiTranslate="iResearchApp.survey.deptContactPerson">Dept Contact Person</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="surveyDate"><span jhiTranslate="iResearchApp.survey.surveyDate">Survey Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="departmentId"><span jhiTranslate="iResearchApp.survey.department">Department</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let survey of surveys ;trackBy: trackId">
+                <td><a [routerLink]="['../survey', survey.id ]">{{survey.id}}</a></td>
+                <td>{{survey.surveyType}}</td>
+                <td>{{survey.targetTypeReadme}}</td>
+                <td>{{survey.targetType}}</td>
+                <td>{{survey.targetContactInfo}}</td>
+                <td>{{survey.targetContactPerson}}</td>
+                <td>{{survey.targetName}}</td>
+                <td>{{survey.targetId}}</td>
+                <td>{{survey.deptContactInfo}}</td>
+                <td>{{survey.deptContactPerson}}</td>
+                <td>{{survey.surveyDate}}</td>
+                <td>
+                    <div *ngIf="survey.departmentId">
+                        <a [routerLink]="['../department', survey.departmentId  ]" >{{survey.departmentId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../survey', survey.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'survey/'+ survey.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'survey/'+ survey.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="surveys && surveys.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

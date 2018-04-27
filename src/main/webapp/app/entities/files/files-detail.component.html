@@ -1,0 +1,66 @@
+
+<div *ngIf="files">
+    <h2><span jhiTranslate="iResearchApp.files.detail.title">Files</span> {{files.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="iResearchApp.files.funcName">Func Name</span></dt>
+        <dd>
+            <span>{{files.funcName}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.files.linkId">Link Id</span></dt>
+        <dd>
+            <span>{{files.linkId}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.files.subId">Sub Id</span></dt>
+        <dd>
+            <span>{{files.subId}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.files.subId2">Sub Id 2</span></dt>
+        <dd>
+            <span>{{files.subId2}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.files.authStr">Auth Str</span></dt>
+        <dd>
+            <span>{{files.authStr}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.files.subType">Sub Type</span></dt>
+        <dd>
+            <span>{{files.subType}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.files.fname">Fname</span></dt>
+        <dd>
+            <span>{{files.fname}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.files.rawName">Raw Name</span></dt>
+        <dd>
+            <span>{{files.rawName}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.files.fsize">Fsize</span></dt>
+        <dd>
+            <span>{{files.fsize}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.files.ftype">Ftype</span></dt>
+        <dd>
+            <span>{{files.ftype}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.files.remarks">Remarks</span></dt>
+        <dd>
+            <span>{{files.remarks}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'files/'+ files.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

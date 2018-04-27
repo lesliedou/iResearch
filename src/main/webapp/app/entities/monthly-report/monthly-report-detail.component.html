@@ -1,0 +1,96 @@
+
+<div *ngIf="monthlyReport">
+    <h2><span jhiTranslate="iResearchApp.monthlyReport.detail.title">Monthly Report</span> {{monthlyReport.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.monthName">Month Name</span></dt>
+        <dd>
+            <span>{{monthlyReport.monthName}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.report">Report</span></dt>
+        <dd>
+            <span>{{monthlyReport.report}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.reportTime">Report Time</span></dt>
+        <dd>
+            <span>{{monthlyReport.reportTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.reportDate">Report Date</span></dt>
+        <dd>
+            <span>{{monthlyReport.reportDate}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.count">Count</span></dt>
+        <dd>
+            <span>{{monthlyReport.count}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.surveyDeptCount">Survey Dept Count</span></dt>
+        <dd>
+            <span>{{monthlyReport.surveyDeptCount}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.surveyCount">Survey Count</span></dt>
+        <dd>
+            <span>{{monthlyReport.surveyCount}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.surveyTargetCountJson">Survey Target Count Json</span></dt>
+        <dd>
+            <span>{{monthlyReport.surveyTargetCountJson}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.surveyTargetCountTotal">Survey Target Count Total</span></dt>
+        <dd>
+            <span>{{monthlyReport.surveyTargetCountTotal}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.surveyTypeCountJson">Survey Type Count Json</span></dt>
+        <dd>
+            <span>{{monthlyReport.surveyTypeCountJson}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.surveyTypeCountTotal">Survey Type Count Total</span></dt>
+        <dd>
+            <span>{{monthlyReport.surveyTypeCountTotal}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.questionCcountJson">Question Ccount Json</span></dt>
+        <dd>
+            <span>{{monthlyReport.questionCcountJson}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.questionCountTotal">Question Count Total</span></dt>
+        <dd>
+            <span>{{monthlyReport.questionCountTotal}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.questionClosedCountJson">Question Closed Count Json</span></dt>
+        <dd>
+            <span>{{monthlyReport.questionClosedCountJson}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.questionClosedCountTota">Question Closed Count Tota</span></dt>
+        <dd>
+            <span>{{monthlyReport.questionClosedCountTota}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.proposalCountJson">Proposal Count Json</span></dt>
+        <dd>
+            <span>{{monthlyReport.proposalCountJson}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.proposalCountTotal">Proposal Count Total</span></dt>
+        <dd>
+            <span>{{monthlyReport.proposalCountTotal}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.monthlyReport.department">Department</span></dt>
+        <dd>
+            <div *ngIf="monthlyReport.departmentId">
+                <a [routerLink]="['/department', monthlyReport.departmentId]">{{monthlyReport.departmentId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'monthly-report/'+ monthlyReport.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

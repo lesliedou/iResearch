@@ -1,0 +1,40 @@
+
+<div *ngIf="uploadInfo">
+    <h2><span jhiTranslate="iResearchApp.uploadInfo.detail.title">Upload Info</span> {{uploadInfo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="iResearchApp.uploadInfo.infoType">Info Type</span></dt>
+        <dd>
+            <span>{{uploadInfo.infoType}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.uploadInfo.subj">Subj</span></dt>
+        <dd>
+            <span>{{uploadInfo.subj}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.uploadInfo.content">Content</span></dt>
+        <dd>
+            <span>{{uploadInfo.content}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.uploadInfo.department">Department</span></dt>
+        <dd>
+            <div *ngIf="uploadInfo.departmentId">
+                <a [routerLink]="['/department', uploadInfo.departmentId]">{{uploadInfo.departmentId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'upload-info/'+ uploadInfo.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

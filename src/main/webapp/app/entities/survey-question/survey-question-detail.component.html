@@ -1,0 +1,172 @@
+
+<div *ngIf="surveyQuestion">
+    <h2><span jhiTranslate="iResearchApp.surveyQuestion.detail.title">Survey Question</span> {{surveyQuestion.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.targetId">Target Id</span></dt>
+        <dd>
+            <span>{{surveyQuestion.targetId}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.targetName">Target Name</span></dt>
+        <dd>
+            <span>{{surveyQuestion.targetName}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.surveyCode">Survey Code</span></dt>
+        <dd>
+            <span>{{surveyQuestion.surveyCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.subSeq">Sub Seq</span></dt>
+        <dd>
+            <span>{{surveyQuestion.subSeq}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.report">Report</span></dt>
+        <dd>
+            <span>{{surveyQuestion.report}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.reportTime">Report Time</span></dt>
+        <dd>
+            <span>{{surveyQuestion.reportTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.questionSummary">Question Summary</span></dt>
+        <dd>
+            <span>{{surveyQuestion.questionSummary}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.questionType">Question Type</span></dt>
+        <dd>
+            <span>{{surveyQuestion.questionType}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.questionInfo">Question Info</span></dt>
+        <dd>
+            <span>{{surveyQuestion.questionInfo}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.deptPlan">Dept Plan</span></dt>
+        <dd>
+            <span>{{surveyQuestion.deptPlan}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.deptPlanType">Dept Plan Type</span></dt>
+        <dd>
+            <span>{{surveyQuestion.deptPlanType}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.deptPlanExtra">Dept Plan Extra</span></dt>
+        <dd>
+            <span>{{surveyQuestion.deptPlanExtra}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.questionStatus">Question Status</span></dt>
+        <dd>
+            <span>{{surveyQuestion.questionStatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.masterDeptId">Master Dept Id</span></dt>
+        <dd>
+            <span>{{surveyQuestion.masterDeptId}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.auxDeptId">Aux Dept Id</span></dt>
+        <dd>
+            <span>{{surveyQuestion.auxDeptId}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.officePlan">Office Plan</span></dt>
+        <dd>
+            <span>{{surveyQuestion.officePlan}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.officePlanJson">Office Plan Json</span></dt>
+        <dd>
+            <span>{{surveyQuestion.officePlanJson}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.officeSubmitUuid">Office Submit Uuid</span></dt>
+        <dd>
+            <span>{{surveyQuestion.officeSubmitUuid}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.officeSubmitTime">Office Submit Time</span></dt>
+        <dd>
+            <span>{{surveyQuestion.officeSubmitTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.leaderConfirm">Leader Confirm</span></dt>
+        <dd>
+            <span>{{surveyQuestion.leaderConfirm}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.leaderConfirmTime">Leader Confirm Time</span></dt>
+        <dd>
+            <span>{{surveyQuestion.leaderConfirmTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.leaderRemarks">Leader Remarks</span></dt>
+        <dd>
+            <span>{{surveyQuestion.leaderRemarks}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.leaderSubmitUuid">Leader Submit Uuid</span></dt>
+        <dd>
+            <span>{{surveyQuestion.leaderSubmitUuid}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.leaderSubmitTime">Leader Submit Time</span></dt>
+        <dd>
+            <span>{{surveyQuestion.leaderSubmitTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.rstProcedure">Rst Procedure</span></dt>
+        <dd>
+            <span>{{surveyQuestion.rstProcedure}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.rstOutcome">Rst Outcome</span></dt>
+        <dd>
+            <span>{{surveyQuestion.rstOutcome}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.rstDate">Rst Date</span></dt>
+        <dd>
+            <span>{{surveyQuestion.rstDate}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.rstTarget">Rst Target</span></dt>
+        <dd>
+            <span>{{surveyQuestion.rstTarget}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.flowStatus">Flow Status</span></dt>
+        <dd>
+            <span>{{surveyQuestion.flowStatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.inputDeptId">Input Dept Id</span></dt>
+        <dd>
+            <span>{{surveyQuestion.inputDeptId}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.inputUser">Input User</span></dt>
+        <dd>
+            <span>{{surveyQuestion.inputUser}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.inputPhone">Input Phone</span></dt>
+        <dd>
+            <span>{{surveyQuestion.inputPhone}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.inputTime">Input Time</span></dt>
+        <dd>
+            <span>{{surveyQuestion.inputTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.survey">Survey</span></dt>
+        <dd>
+            <div *ngIf="surveyQuestion.surveyId">
+                <a [routerLink]="['/survey-question', surveyQuestion.surveyId]">{{surveyQuestion.surveyId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.onsite">Onsite</span></dt>
+        <dd>
+            <div *ngIf="surveyQuestion.onsiteId">
+                <a [routerLink]="['/onsite', surveyQuestion.onsiteId]">{{surveyQuestion.onsiteId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.surveyQuestion.department">Department</span></dt>
+        <dd>
+            <div *ngIf="surveyQuestion.departmentId">
+                <a [routerLink]="['/department', surveyQuestion.departmentId]">{{surveyQuestion.departmentId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'survey-question/'+ surveyQuestion.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

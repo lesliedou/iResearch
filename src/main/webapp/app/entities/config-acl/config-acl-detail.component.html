@@ -1,0 +1,34 @@
+
+<div *ngIf="configAcl">
+    <h2><span jhiTranslate="iResearchApp.configAcl.detail.title">Config Acl</span> {{configAcl.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="iResearchApp.configAcl.modName">Mod Name</span></dt>
+        <dd>
+            <span>{{configAcl.modName}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.configAcl.funcName">Func Name</span></dt>
+        <dd>
+            <span>{{configAcl.funcName}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.configAcl.aclList">Acl List</span></dt>
+        <dd>
+            <span>{{configAcl.aclList}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'config-acl/'+ configAcl.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,50 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myDepartmentLabel" jhiTranslate="iResearchApp.department.home.createOrEditLabel">Create or edit a Department</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!department.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="department.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.department.deptName" for="field_deptName">Dept Name</label>
+            <input type="text" class="form-control" name="deptName" id="field_deptName"
+                [(ngModel)]="department.deptName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.department.deptCode" for="field_deptCode">Dept Code</label>
+            <input type="text" class="form-control" name="deptCode" id="field_deptCode"
+                [(ngModel)]="department.deptCode" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.department.deptType" for="field_deptType">Dept Type</label>
+            <input type="text" class="form-control" name="deptType" id="field_deptType"
+                [(ngModel)]="department.deptType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.department.contactPerson" for="field_contactPerson">Contact Person</label>
+            <input type="text" class="form-control" name="contactPerson" id="field_contactPerson"
+                [(ngModel)]="department.contactPerson" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.department.contactInfo" for="field_contactInfo">Contact Info</label>
+            <input type="text" class="form-control" name="contactInfo" id="field_contactInfo"
+                [(ngModel)]="department.contactInfo" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

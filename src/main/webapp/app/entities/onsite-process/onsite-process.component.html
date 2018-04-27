@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="iResearchApp.onsiteProcess.home.title">Onsite Processes</span>
+        <button class="btn btn-primary float-right jh-create-entity create-onsite-process" [routerLink]="['/', { outlets: { popup: ['onsite-process-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="iResearchApp.onsiteProcess.home.createLabel">
+            Create new Onsite Process
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="onsiteProcesses">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="confirm"><span jhiTranslate="iResearchApp.onsiteProcess.confirm">Confirm</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="remarks"><span jhiTranslate="iResearchApp.onsiteProcess.remarks">Remarks</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="onsiteId"><span jhiTranslate="iResearchApp.onsiteProcess.onsite">Onsite</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let onsiteProcess of onsiteProcesses ;trackBy: trackId">
+                <td><a [routerLink]="['../onsite-process', onsiteProcess.id ]">{{onsiteProcess.id}}</a></td>
+                <td>{{onsiteProcess.confirm}}</td>
+                <td>{{onsiteProcess.remarks}}</td>
+                <td>
+                    <div *ngIf="onsiteProcess.onsiteId">
+                        <a [routerLink]="['../onsite', onsiteProcess.onsiteId  ]" >{{onsiteProcess.onsiteId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../onsite-process', onsiteProcess.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'onsite-process/'+ onsiteProcess.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'onsite-process/'+ onsiteProcess.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="onsiteProcesses && onsiteProcesses.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

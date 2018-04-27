@@ -1,0 +1,148 @@
+<div>
+    <h2>
+        <span jhiTranslate="iResearchApp.surveyQuestion.home.title">Survey Questions</span>
+        <button class="btn btn-primary float-right jh-create-entity create-survey-question" [routerLink]="['/', { outlets: { popup: ['survey-question-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="iResearchApp.surveyQuestion.home.createLabel">
+            Create new Survey Question
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="surveyQuestions">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="targetId"><span jhiTranslate="iResearchApp.surveyQuestion.targetId">Target Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="targetName"><span jhiTranslate="iResearchApp.surveyQuestion.targetName">Target Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="surveyCode"><span jhiTranslate="iResearchApp.surveyQuestion.surveyCode">Survey Code</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="subSeq"><span jhiTranslate="iResearchApp.surveyQuestion.subSeq">Sub Seq</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="report"><span jhiTranslate="iResearchApp.surveyQuestion.report">Report</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="reportTime"><span jhiTranslate="iResearchApp.surveyQuestion.reportTime">Report Time</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="questionSummary"><span jhiTranslate="iResearchApp.surveyQuestion.questionSummary">Question Summary</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="questionType"><span jhiTranslate="iResearchApp.surveyQuestion.questionType">Question Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="questionInfo"><span jhiTranslate="iResearchApp.surveyQuestion.questionInfo">Question Info</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="deptPlan"><span jhiTranslate="iResearchApp.surveyQuestion.deptPlan">Dept Plan</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="deptPlanType"><span jhiTranslate="iResearchApp.surveyQuestion.deptPlanType">Dept Plan Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="deptPlanExtra"><span jhiTranslate="iResearchApp.surveyQuestion.deptPlanExtra">Dept Plan Extra</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="questionStatus"><span jhiTranslate="iResearchApp.surveyQuestion.questionStatus">Question Status</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="masterDeptId"><span jhiTranslate="iResearchApp.surveyQuestion.masterDeptId">Master Dept Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="auxDeptId"><span jhiTranslate="iResearchApp.surveyQuestion.auxDeptId">Aux Dept Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="officePlan"><span jhiTranslate="iResearchApp.surveyQuestion.officePlan">Office Plan</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="officePlanJson"><span jhiTranslate="iResearchApp.surveyQuestion.officePlanJson">Office Plan Json</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="officeSubmitUuid"><span jhiTranslate="iResearchApp.surveyQuestion.officeSubmitUuid">Office Submit Uuid</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="officeSubmitTime"><span jhiTranslate="iResearchApp.surveyQuestion.officeSubmitTime">Office Submit Time</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="leaderConfirm"><span jhiTranslate="iResearchApp.surveyQuestion.leaderConfirm">Leader Confirm</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="leaderConfirmTime"><span jhiTranslate="iResearchApp.surveyQuestion.leaderConfirmTime">Leader Confirm Time</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="leaderRemarks"><span jhiTranslate="iResearchApp.surveyQuestion.leaderRemarks">Leader Remarks</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="leaderSubmitUuid"><span jhiTranslate="iResearchApp.surveyQuestion.leaderSubmitUuid">Leader Submit Uuid</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="leaderSubmitTime"><span jhiTranslate="iResearchApp.surveyQuestion.leaderSubmitTime">Leader Submit Time</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="rstProcedure"><span jhiTranslate="iResearchApp.surveyQuestion.rstProcedure">Rst Procedure</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="rstOutcome"><span jhiTranslate="iResearchApp.surveyQuestion.rstOutcome">Rst Outcome</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="rstDate"><span jhiTranslate="iResearchApp.surveyQuestion.rstDate">Rst Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="rstTarget"><span jhiTranslate="iResearchApp.surveyQuestion.rstTarget">Rst Target</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="flowStatus"><span jhiTranslate="iResearchApp.surveyQuestion.flowStatus">Flow Status</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="inputDeptId"><span jhiTranslate="iResearchApp.surveyQuestion.inputDeptId">Input Dept Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="inputUser"><span jhiTranslate="iResearchApp.surveyQuestion.inputUser">Input User</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="inputPhone"><span jhiTranslate="iResearchApp.surveyQuestion.inputPhone">Input Phone</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="inputTime"><span jhiTranslate="iResearchApp.surveyQuestion.inputTime">Input Time</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="surveyId"><span jhiTranslate="iResearchApp.surveyQuestion.survey">Survey</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="onsiteId"><span jhiTranslate="iResearchApp.surveyQuestion.onsite">Onsite</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="departmentId"><span jhiTranslate="iResearchApp.surveyQuestion.department">Department</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let surveyQuestion of surveyQuestions ;trackBy: trackId">
+                <td><a [routerLink]="['../survey-question', surveyQuestion.id ]">{{surveyQuestion.id}}</a></td>
+                <td>{{surveyQuestion.targetId}}</td>
+                <td>{{surveyQuestion.targetName}}</td>
+                <td>{{surveyQuestion.surveyCode}}</td>
+                <td>{{surveyQuestion.subSeq}}</td>
+                <td>{{surveyQuestion.report}}</td>
+                <td>{{surveyQuestion.reportTime}}</td>
+                <td>{{surveyQuestion.questionSummary}}</td>
+                <td>{{surveyQuestion.questionType}}</td>
+                <td>{{surveyQuestion.questionInfo}}</td>
+                <td>{{surveyQuestion.deptPlan}}</td>
+                <td>{{surveyQuestion.deptPlanType}}</td>
+                <td>{{surveyQuestion.deptPlanExtra}}</td>
+                <td>{{surveyQuestion.questionStatus}}</td>
+                <td>{{surveyQuestion.masterDeptId}}</td>
+                <td>{{surveyQuestion.auxDeptId}}</td>
+                <td>{{surveyQuestion.officePlan}}</td>
+                <td>{{surveyQuestion.officePlanJson}}</td>
+                <td>{{surveyQuestion.officeSubmitUuid}}</td>
+                <td>{{surveyQuestion.officeSubmitTime}}</td>
+                <td>{{surveyQuestion.leaderConfirm}}</td>
+                <td>{{surveyQuestion.leaderConfirmTime}}</td>
+                <td>{{surveyQuestion.leaderRemarks}}</td>
+                <td>{{surveyQuestion.leaderSubmitUuid}}</td>
+                <td>{{surveyQuestion.leaderSubmitTime}}</td>
+                <td>{{surveyQuestion.rstProcedure}}</td>
+                <td>{{surveyQuestion.rstOutcome}}</td>
+                <td>{{surveyQuestion.rstDate}}</td>
+                <td>{{surveyQuestion.rstTarget}}</td>
+                <td>{{surveyQuestion.flowStatus}}</td>
+                <td>{{surveyQuestion.inputDeptId}}</td>
+                <td>{{surveyQuestion.inputUser}}</td>
+                <td>{{surveyQuestion.inputPhone}}</td>
+                <td>{{surveyQuestion.inputTime}}</td>
+                <td>
+                    <div *ngIf="surveyQuestion.surveyId">
+                        <a [routerLink]="['../survey-question', surveyQuestion.surveyId  ]" >{{surveyQuestion.surveyId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="surveyQuestion.onsiteId">
+                        <a [routerLink]="['../onsite', surveyQuestion.onsiteId  ]" >{{surveyQuestion.onsiteId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="surveyQuestion.departmentId">
+                        <a [routerLink]="['../department', surveyQuestion.departmentId  ]" >{{surveyQuestion.departmentId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../survey-question', surveyQuestion.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'survey-question/'+ surveyQuestion.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'survey-question/'+ surveyQuestion.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="surveyQuestions && surveyQuestions.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

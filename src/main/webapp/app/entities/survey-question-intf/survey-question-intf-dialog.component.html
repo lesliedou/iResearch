@@ -1,0 +1,107 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="mySurveyQuestionIntfLabel" jhiTranslate="iResearchApp.surveyQuestionIntf.home.createOrEditLabel">Create or edit a Survey Question Intf</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!surveyQuestionIntf.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="surveyQuestionIntf.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.taskID" for="field_taskID">Task ID</label>
+            <input type="text" class="form-control" name="taskID" id="field_taskID"
+                [(ngModel)]="surveyQuestionIntf.taskID" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.statusType" for="field_statusType">Status Type</label>
+            <input type="text" class="form-control" name="statusType" id="field_statusType"
+                [(ngModel)]="surveyQuestionIntf.statusType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.returnTime" for="field_returnTime">Return Time</label>
+            <input type="text" class="form-control" name="returnTime" id="field_returnTime"
+                [(ngModel)]="surveyQuestionIntf.returnTime" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.returnNote" for="field_returnNote">Return Note</label>
+            <input type="text" class="form-control" name="returnNote" id="field_returnNote"
+                [(ngModel)]="surveyQuestionIntf.returnNote" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.createTime" for="field_createTime">Create Time</label>
+            <input type="text" class="form-control" name="createTime" id="field_createTime"
+                [(ngModel)]="surveyQuestionIntf.createTime" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.allEndTime" for="field_allEndTime">All End Time</label>
+            <input type="text" class="form-control" name="allEndTime" id="field_allEndTime"
+                [(ngModel)]="surveyQuestionIntf.allEndTime" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.createNote" for="field_createNote">Create Note</label>
+            <input type="text" class="form-control" name="createNote" id="field_createNote"
+                [(ngModel)]="surveyQuestionIntf.createNote" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.endTime" for="field_endTime">End Time</label>
+            <input type="text" class="form-control" name="endTime" id="field_endTime"
+                [(ngModel)]="surveyQuestionIntf.endTime" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.lastSolvingTime" for="field_lastSolvingTime">Last Solving Time</label>
+            <input type="text" class="form-control" name="lastSolvingTime" id="field_lastSolvingTime"
+                [(ngModel)]="surveyQuestionIntf.lastSolvingTime" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.solvingNote" for="field_solvingNote">Solving Note</label>
+            <input type="text" class="form-control" name="solvingNote" id="field_solvingNote"
+                [(ngModel)]="surveyQuestionIntf.solvingNote" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.endNote" for="field_endNote">End Note</label>
+            <input type="text" class="form-control" name="endNote" id="field_endNote"
+                [(ngModel)]="surveyQuestionIntf.endNote" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.banliResult" for="field_banliResult">Banli Result</label>
+            <input type="text" class="form-control" name="banliResult" id="field_banliResult"
+                [(ngModel)]="surveyQuestionIntf.banliResult" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.executeDeptName" for="field_executeDeptName">Execute Dept Name</label>
+            <input type="text" class="form-control" name="executeDeptName" id="field_executeDeptName"
+                [(ngModel)]="surveyQuestionIntf.executeDeptName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.assistantDeptName" for="field_assistantDeptName">Assistant Dept Name</label>
+            <input type="text" class="form-control" name="assistantDeptName" id="field_assistantDeptName"
+                [(ngModel)]="surveyQuestionIntf.assistantDeptName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.feedBackNote" for="field_feedBackNote">Feed Back Note</label>
+            <input type="text" class="form-control" name="feedBackNote" id="field_feedBackNote"
+                [(ngModel)]="surveyQuestionIntf.feedBackNote" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.surveyQuestionIntf.surveyQuestion" for="field_surveyQuestion">Survey Question</label>
+            <select class="form-control" id="field_surveyQuestion" name="surveyQuestion" [(ngModel)]="surveyQuestionIntf.surveyQuestionId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="surveyQuestionOption.id" *ngFor="let surveyQuestionOption of surveyquestions; trackBy: trackSurveyQuestionById">{{surveyQuestionOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

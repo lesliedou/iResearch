@@ -1,0 +1,80 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFilesLabel" jhiTranslate="iResearchApp.files.home.createOrEditLabel">Create or edit a Files</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!files.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="files.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.files.funcName" for="field_funcName">Func Name</label>
+            <input type="text" class="form-control" name="funcName" id="field_funcName"
+                [(ngModel)]="files.funcName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.files.linkId" for="field_linkId">Link Id</label>
+            <input type="text" class="form-control" name="linkId" id="field_linkId"
+                [(ngModel)]="files.linkId" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.files.subId" for="field_subId">Sub Id</label>
+            <input type="text" class="form-control" name="subId" id="field_subId"
+                [(ngModel)]="files.subId" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.files.subId2" for="field_subId2">Sub Id 2</label>
+            <input type="text" class="form-control" name="subId2" id="field_subId2"
+                [(ngModel)]="files.subId2" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.files.authStr" for="field_authStr">Auth Str</label>
+            <input type="text" class="form-control" name="authStr" id="field_authStr"
+                [(ngModel)]="files.authStr" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.files.subType" for="field_subType">Sub Type</label>
+            <input type="text" class="form-control" name="subType" id="field_subType"
+                [(ngModel)]="files.subType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.files.fname" for="field_fname">Fname</label>
+            <input type="text" class="form-control" name="fname" id="field_fname"
+                [(ngModel)]="files.fname" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.files.rawName" for="field_rawName">Raw Name</label>
+            <input type="text" class="form-control" name="rawName" id="field_rawName"
+                [(ngModel)]="files.rawName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.files.fsize" for="field_fsize">Fsize</label>
+            <input type="text" class="form-control" name="fsize" id="field_fsize"
+                [(ngModel)]="files.fsize" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.files.ftype" for="field_ftype">Ftype</label>
+            <input type="text" class="form-control" name="ftype" id="field_ftype"
+                [(ngModel)]="files.ftype" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.files.remarks" for="field_remarks">Remarks</label>
+            <input type="text" class="form-control" name="remarks" id="field_remarks"
+                [(ngModel)]="files.remarks" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

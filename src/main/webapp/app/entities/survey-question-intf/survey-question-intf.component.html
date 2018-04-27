@@ -1,0 +1,100 @@
+<div>
+    <h2>
+        <span jhiTranslate="iResearchApp.surveyQuestionIntf.home.title">Survey Question Intfs</span>
+        <button class="btn btn-primary float-right jh-create-entity create-survey-question-intf" [routerLink]="['/', { outlets: { popup: ['survey-question-intf-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="iResearchApp.surveyQuestionIntf.home.createLabel">
+            Create new Survey Question Intf
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="surveyQuestionIntfs">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="taskID"><span jhiTranslate="iResearchApp.surveyQuestionIntf.taskID">Task ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="statusType"><span jhiTranslate="iResearchApp.surveyQuestionIntf.statusType">Status Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="returnTime"><span jhiTranslate="iResearchApp.surveyQuestionIntf.returnTime">Return Time</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="returnNote"><span jhiTranslate="iResearchApp.surveyQuestionIntf.returnNote">Return Note</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="createTime"><span jhiTranslate="iResearchApp.surveyQuestionIntf.createTime">Create Time</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="allEndTime"><span jhiTranslate="iResearchApp.surveyQuestionIntf.allEndTime">All End Time</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="createNote"><span jhiTranslate="iResearchApp.surveyQuestionIntf.createNote">Create Note</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="endTime"><span jhiTranslate="iResearchApp.surveyQuestionIntf.endTime">End Time</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="lastSolvingTime"><span jhiTranslate="iResearchApp.surveyQuestionIntf.lastSolvingTime">Last Solving Time</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="solvingNote"><span jhiTranslate="iResearchApp.surveyQuestionIntf.solvingNote">Solving Note</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="endNote"><span jhiTranslate="iResearchApp.surveyQuestionIntf.endNote">End Note</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="banliResult"><span jhiTranslate="iResearchApp.surveyQuestionIntf.banliResult">Banli Result</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="executeDeptName"><span jhiTranslate="iResearchApp.surveyQuestionIntf.executeDeptName">Execute Dept Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="assistantDeptName"><span jhiTranslate="iResearchApp.surveyQuestionIntf.assistantDeptName">Assistant Dept Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="feedBackNote"><span jhiTranslate="iResearchApp.surveyQuestionIntf.feedBackNote">Feed Back Note</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="surveyQuestionId"><span jhiTranslate="iResearchApp.surveyQuestionIntf.surveyQuestion">Survey Question</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let surveyQuestionIntf of surveyQuestionIntfs ;trackBy: trackId">
+                <td><a [routerLink]="['../survey-question-intf', surveyQuestionIntf.id ]">{{surveyQuestionIntf.id}}</a></td>
+                <td>{{surveyQuestionIntf.taskID}}</td>
+                <td>{{surveyQuestionIntf.statusType}}</td>
+                <td>{{surveyQuestionIntf.returnTime}}</td>
+                <td>{{surveyQuestionIntf.returnNote}}</td>
+                <td>{{surveyQuestionIntf.createTime}}</td>
+                <td>{{surveyQuestionIntf.allEndTime}}</td>
+                <td>{{surveyQuestionIntf.createNote}}</td>
+                <td>{{surveyQuestionIntf.endTime}}</td>
+                <td>{{surveyQuestionIntf.lastSolvingTime}}</td>
+                <td>{{surveyQuestionIntf.solvingNote}}</td>
+                <td>{{surveyQuestionIntf.endNote}}</td>
+                <td>{{surveyQuestionIntf.banliResult}}</td>
+                <td>{{surveyQuestionIntf.executeDeptName}}</td>
+                <td>{{surveyQuestionIntf.assistantDeptName}}</td>
+                <td>{{surveyQuestionIntf.feedBackNote}}</td>
+                <td>
+                    <div *ngIf="surveyQuestionIntf.surveyQuestionId">
+                        <a [routerLink]="['../survey-question', surveyQuestionIntf.surveyQuestionId  ]" >{{surveyQuestionIntf.surveyQuestionId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../survey-question-intf', surveyQuestionIntf.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'survey-question-intf/'+ surveyQuestionIntf.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'survey-question-intf/'+ surveyQuestionIntf.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="surveyQuestionIntfs && surveyQuestionIntfs.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+
+<div *ngIf="target">
+    <h2><span jhiTranslate="iResearchApp.target.detail.title">Target</span> {{target.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="iResearchApp.target.targetName">Target Name</span></dt>
+        <dd>
+            <span>{{target.targetName}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.target.targetType">Target Type</span></dt>
+        <dd>
+            <span>{{target.targetType}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.target.targetTypeReadme">Target Type Readme</span></dt>
+        <dd>
+            <span>{{target.targetTypeReadme}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.target.contactPerson">Contact Person</span></dt>
+        <dd>
+            <span>{{target.contactPerson}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.target.contactPhone">Contact Phone</span></dt>
+        <dd>
+            <span>{{target.contactPhone}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.target.contactEmail">Contact Email</span></dt>
+        <dd>
+            <span>{{target.contactEmail}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.target.contactAddr">Contact Addr</span></dt>
+        <dd>
+            <span>{{target.contactAddr}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'target/'+ target.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

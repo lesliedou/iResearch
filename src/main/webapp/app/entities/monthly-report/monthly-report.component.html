@@ -1,0 +1,104 @@
+<div>
+    <h2>
+        <span jhiTranslate="iResearchApp.monthlyReport.home.title">Monthly Reports</span>
+        <button class="btn btn-primary float-right jh-create-entity create-monthly-report" [routerLink]="['/', { outlets: { popup: ['monthly-report-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="iResearchApp.monthlyReport.home.createLabel">
+            Create new Monthly Report
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="monthlyReports">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="monthName"><span jhiTranslate="iResearchApp.monthlyReport.monthName">Month Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="report"><span jhiTranslate="iResearchApp.monthlyReport.report">Report</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="reportTime"><span jhiTranslate="iResearchApp.monthlyReport.reportTime">Report Time</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="reportDate"><span jhiTranslate="iResearchApp.monthlyReport.reportDate">Report Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="count"><span jhiTranslate="iResearchApp.monthlyReport.count">Count</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="surveyDeptCount"><span jhiTranslate="iResearchApp.monthlyReport.surveyDeptCount">Survey Dept Count</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="surveyCount"><span jhiTranslate="iResearchApp.monthlyReport.surveyCount">Survey Count</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="surveyTargetCountJson"><span jhiTranslate="iResearchApp.monthlyReport.surveyTargetCountJson">Survey Target Count Json</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="surveyTargetCountTotal"><span jhiTranslate="iResearchApp.monthlyReport.surveyTargetCountTotal">Survey Target Count Total</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="surveyTypeCountJson"><span jhiTranslate="iResearchApp.monthlyReport.surveyTypeCountJson">Survey Type Count Json</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="surveyTypeCountTotal"><span jhiTranslate="iResearchApp.monthlyReport.surveyTypeCountTotal">Survey Type Count Total</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="questionCcountJson"><span jhiTranslate="iResearchApp.monthlyReport.questionCcountJson">Question Ccount Json</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="questionCountTotal"><span jhiTranslate="iResearchApp.monthlyReport.questionCountTotal">Question Count Total</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="questionClosedCountJson"><span jhiTranslate="iResearchApp.monthlyReport.questionClosedCountJson">Question Closed Count Json</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="questionClosedCountTota"><span jhiTranslate="iResearchApp.monthlyReport.questionClosedCountTota">Question Closed Count Tota</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="proposalCountJson"><span jhiTranslate="iResearchApp.monthlyReport.proposalCountJson">Proposal Count Json</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="proposalCountTotal"><span jhiTranslate="iResearchApp.monthlyReport.proposalCountTotal">Proposal Count Total</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="departmentId"><span jhiTranslate="iResearchApp.monthlyReport.department">Department</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let monthlyReport of monthlyReports ;trackBy: trackId">
+                <td><a [routerLink]="['../monthly-report', monthlyReport.id ]">{{monthlyReport.id}}</a></td>
+                <td>{{monthlyReport.monthName}}</td>
+                <td>{{monthlyReport.report}}</td>
+                <td>{{monthlyReport.reportTime}}</td>
+                <td>{{monthlyReport.reportDate}}</td>
+                <td>{{monthlyReport.count}}</td>
+                <td>{{monthlyReport.surveyDeptCount}}</td>
+                <td>{{monthlyReport.surveyCount}}</td>
+                <td>{{monthlyReport.surveyTargetCountJson}}</td>
+                <td>{{monthlyReport.surveyTargetCountTotal}}</td>
+                <td>{{monthlyReport.surveyTypeCountJson}}</td>
+                <td>{{monthlyReport.surveyTypeCountTotal}}</td>
+                <td>{{monthlyReport.questionCcountJson}}</td>
+                <td>{{monthlyReport.questionCountTotal}}</td>
+                <td>{{monthlyReport.questionClosedCountJson}}</td>
+                <td>{{monthlyReport.questionClosedCountTota}}</td>
+                <td>{{monthlyReport.proposalCountJson}}</td>
+                <td>{{monthlyReport.proposalCountTotal}}</td>
+                <td>
+                    <div *ngIf="monthlyReport.departmentId">
+                        <a [routerLink]="['../department', monthlyReport.departmentId  ]" >{{monthlyReport.departmentId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../monthly-report', monthlyReport.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'monthly-report/'+ monthlyReport.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'monthly-report/'+ monthlyReport.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="monthlyReports && monthlyReports.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

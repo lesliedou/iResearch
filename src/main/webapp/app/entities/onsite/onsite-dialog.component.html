@@ -1,0 +1,97 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myOnsiteLabel" jhiTranslate="iResearchApp.onsite.home.createOrEditLabel">Create or edit a Onsite</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!onsite.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="onsite.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.report" for="field_report">Report</label>
+            <input type="text" class="form-control" name="report" id="field_report"
+                [(ngModel)]="onsite.report" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.onsiteTime" for="field_onsiteTime">Onsite Time</label>
+            <input type="text" class="form-control" name="onsiteTime" id="field_onsiteTime"
+                [(ngModel)]="onsite.onsiteTime" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.accompany" for="field_accompany">Accompany</label>
+            <input type="text" class="form-control" name="accompany" id="field_accompany"
+                [(ngModel)]="onsite.accompany" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.onsiteAddr" for="field_onsiteAddr">Onsite Addr</label>
+            <input type="text" class="form-control" name="onsiteAddr" id="field_onsiteAddr"
+                [(ngModel)]="onsite.onsiteAddr" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.onsiteInfo" for="field_onsiteInfo">Onsite Info</label>
+            <input type="text" class="form-control" name="onsiteInfo" id="field_onsiteInfo"
+                [(ngModel)]="onsite.onsiteInfo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.targetId" for="field_targetId">Target Id</label>
+            <input type="text" class="form-control" name="targetId" id="field_targetId"
+                [(ngModel)]="onsite.targetId" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.targetName" for="field_targetName">Target Name</label>
+            <input type="text" class="form-control" name="targetName" id="field_targetName"
+                [(ngModel)]="onsite.targetName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.surveyType" for="field_surveyType">Survey Type</label>
+            <input type="text" class="form-control" name="surveyType" id="field_surveyType"
+                [(ngModel)]="onsite.surveyType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.infoType" for="field_infoType">Info Type</label>
+            <input type="text" class="form-control" name="infoType" id="field_infoType"
+                [(ngModel)]="onsite.infoType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.adviceDeptId" for="field_adviceDeptId">Advice Dept Id</label>
+            <input type="text" class="form-control" name="adviceDeptId" id="field_adviceDeptId"
+                [(ngModel)]="onsite.adviceDeptId" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.adviceReadTime" for="field_adviceReadTime">Advice Read Time</label>
+            <input type="text" class="form-control" name="adviceReadTime" id="field_adviceReadTime"
+                [(ngModel)]="onsite.adviceReadTime" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.adviceReadUuid" for="field_adviceReadUuid">Advice Read Uuid</label>
+            <input type="text" class="form-control" name="adviceReadUuid" id="field_adviceReadUuid"
+                [(ngModel)]="onsite.adviceReadUuid" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.adviceStatus" for="field_adviceStatus">Advice Status</label>
+            <input type="text" class="form-control" name="adviceStatus" id="field_adviceStatus"
+                [(ngModel)]="onsite.adviceStatus" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.onsite.department" for="field_department">Department</label>
+            <select class="form-control" id="field_department" name="department" [(ngModel)]="onsite.departmentId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="departmentOption.id" *ngFor="let departmentOption of departments; trackBy: trackDepartmentById">{{departmentOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

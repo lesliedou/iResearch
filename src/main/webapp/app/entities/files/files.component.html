@@ -1,0 +1,86 @@
+<div>
+    <h2>
+        <span jhiTranslate="iResearchApp.files.home.title">Files</span>
+        <button class="btn btn-primary float-right jh-create-entity create-files" [routerLink]="['/', { outlets: { popup: ['files-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="iResearchApp.files.home.createLabel">
+            Create new Files
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="files">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="funcName"><span jhiTranslate="iResearchApp.files.funcName">Func Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="linkId"><span jhiTranslate="iResearchApp.files.linkId">Link Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="subId"><span jhiTranslate="iResearchApp.files.subId">Sub Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="subId2"><span jhiTranslate="iResearchApp.files.subId2">Sub Id 2</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="authStr"><span jhiTranslate="iResearchApp.files.authStr">Auth Str</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="subType"><span jhiTranslate="iResearchApp.files.subType">Sub Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fname"><span jhiTranslate="iResearchApp.files.fname">Fname</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="rawName"><span jhiTranslate="iResearchApp.files.rawName">Raw Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fsize"><span jhiTranslate="iResearchApp.files.fsize">Fsize</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ftype"><span jhiTranslate="iResearchApp.files.ftype">Ftype</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="remarks"><span jhiTranslate="iResearchApp.files.remarks">Remarks</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let files of files ;trackBy: trackId">
+                <td><a [routerLink]="['../files', files.id ]">{{files.id}}</a></td>
+                <td>{{files.funcName}}</td>
+                <td>{{files.linkId}}</td>
+                <td>{{files.subId}}</td>
+                <td>{{files.subId2}}</td>
+                <td>{{files.authStr}}</td>
+                <td>{{files.subType}}</td>
+                <td>{{files.fname}}</td>
+                <td>{{files.rawName}}</td>
+                <td>{{files.fsize}}</td>
+                <td>{{files.ftype}}</td>
+                <td>{{files.remarks}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../files', files.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'files/'+ files.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'files/'+ files.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="files && files.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

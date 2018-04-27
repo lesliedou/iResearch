@@ -1,0 +1,117 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myMonthlyReportLabel" jhiTranslate="iResearchApp.monthlyReport.home.createOrEditLabel">Create or edit a Monthly Report</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!monthlyReport.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="monthlyReport.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.monthName" for="field_monthName">Month Name</label>
+            <input type="text" class="form-control" name="monthName" id="field_monthName"
+                [(ngModel)]="monthlyReport.monthName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.report" for="field_report">Report</label>
+            <input type="text" class="form-control" name="report" id="field_report"
+                [(ngModel)]="monthlyReport.report" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.reportTime" for="field_reportTime">Report Time</label>
+            <input type="text" class="form-control" name="reportTime" id="field_reportTime"
+                [(ngModel)]="monthlyReport.reportTime" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.reportDate" for="field_reportDate">Report Date</label>
+            <input type="text" class="form-control" name="reportDate" id="field_reportDate"
+                [(ngModel)]="monthlyReport.reportDate" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.count" for="field_count">Count</label>
+            <input type="text" class="form-control" name="count" id="field_count"
+                [(ngModel)]="monthlyReport.count" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.surveyDeptCount" for="field_surveyDeptCount">Survey Dept Count</label>
+            <input type="text" class="form-control" name="surveyDeptCount" id="field_surveyDeptCount"
+                [(ngModel)]="monthlyReport.surveyDeptCount" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.surveyCount" for="field_surveyCount">Survey Count</label>
+            <input type="text" class="form-control" name="surveyCount" id="field_surveyCount"
+                [(ngModel)]="monthlyReport.surveyCount" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.surveyTargetCountJson" for="field_surveyTargetCountJson">Survey Target Count Json</label>
+            <input type="text" class="form-control" name="surveyTargetCountJson" id="field_surveyTargetCountJson"
+                [(ngModel)]="monthlyReport.surveyTargetCountJson" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.surveyTargetCountTotal" for="field_surveyTargetCountTotal">Survey Target Count Total</label>
+            <input type="text" class="form-control" name="surveyTargetCountTotal" id="field_surveyTargetCountTotal"
+                [(ngModel)]="monthlyReport.surveyTargetCountTotal" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.surveyTypeCountJson" for="field_surveyTypeCountJson">Survey Type Count Json</label>
+            <input type="text" class="form-control" name="surveyTypeCountJson" id="field_surveyTypeCountJson"
+                [(ngModel)]="monthlyReport.surveyTypeCountJson" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.surveyTypeCountTotal" for="field_surveyTypeCountTotal">Survey Type Count Total</label>
+            <input type="text" class="form-control" name="surveyTypeCountTotal" id="field_surveyTypeCountTotal"
+                [(ngModel)]="monthlyReport.surveyTypeCountTotal" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.questionCcountJson" for="field_questionCcountJson">Question Ccount Json</label>
+            <input type="text" class="form-control" name="questionCcountJson" id="field_questionCcountJson"
+                [(ngModel)]="monthlyReport.questionCcountJson" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.questionCountTotal" for="field_questionCountTotal">Question Count Total</label>
+            <input type="text" class="form-control" name="questionCountTotal" id="field_questionCountTotal"
+                [(ngModel)]="monthlyReport.questionCountTotal" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.questionClosedCountJson" for="field_questionClosedCountJson">Question Closed Count Json</label>
+            <input type="text" class="form-control" name="questionClosedCountJson" id="field_questionClosedCountJson"
+                [(ngModel)]="monthlyReport.questionClosedCountJson" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.questionClosedCountTota" for="field_questionClosedCountTota">Question Closed Count Tota</label>
+            <input type="text" class="form-control" name="questionClosedCountTota" id="field_questionClosedCountTota"
+                [(ngModel)]="monthlyReport.questionClosedCountTota" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.proposalCountJson" for="field_proposalCountJson">Proposal Count Json</label>
+            <input type="text" class="form-control" name="proposalCountJson" id="field_proposalCountJson"
+                [(ngModel)]="monthlyReport.proposalCountJson" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.proposalCountTotal" for="field_proposalCountTotal">Proposal Count Total</label>
+            <input type="text" class="form-control" name="proposalCountTotal" id="field_proposalCountTotal"
+                [(ngModel)]="monthlyReport.proposalCountTotal" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="iResearchApp.monthlyReport.department" for="field_department">Department</label>
+            <select class="form-control" id="field_department" name="department" [(ngModel)]="monthlyReport.departmentId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="departmentOption.id" *ngFor="let departmentOption of departments; trackBy: trackDepartmentById">{{departmentOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

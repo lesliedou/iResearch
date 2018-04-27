@@ -1,0 +1,80 @@
+
+<div *ngIf="onsite">
+    <h2><span jhiTranslate="iResearchApp.onsite.detail.title">Onsite</span> {{onsite.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="iResearchApp.onsite.report">Report</span></dt>
+        <dd>
+            <span>{{onsite.report}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.onsiteTime">Onsite Time</span></dt>
+        <dd>
+            <span>{{onsite.onsiteTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.accompany">Accompany</span></dt>
+        <dd>
+            <span>{{onsite.accompany}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.onsiteAddr">Onsite Addr</span></dt>
+        <dd>
+            <span>{{onsite.onsiteAddr}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.onsiteInfo">Onsite Info</span></dt>
+        <dd>
+            <span>{{onsite.onsiteInfo}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.targetId">Target Id</span></dt>
+        <dd>
+            <span>{{onsite.targetId}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.targetName">Target Name</span></dt>
+        <dd>
+            <span>{{onsite.targetName}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.surveyType">Survey Type</span></dt>
+        <dd>
+            <span>{{onsite.surveyType}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.infoType">Info Type</span></dt>
+        <dd>
+            <span>{{onsite.infoType}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.adviceDeptId">Advice Dept Id</span></dt>
+        <dd>
+            <span>{{onsite.adviceDeptId}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.adviceReadTime">Advice Read Time</span></dt>
+        <dd>
+            <span>{{onsite.adviceReadTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.adviceReadUuid">Advice Read Uuid</span></dt>
+        <dd>
+            <span>{{onsite.adviceReadUuid}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.adviceStatus">Advice Status</span></dt>
+        <dd>
+            <span>{{onsite.adviceStatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="iResearchApp.onsite.department">Department</span></dt>
+        <dd>
+            <div *ngIf="onsite.departmentId">
+                <a [routerLink]="['/department', onsite.departmentId]">{{onsite.departmentId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'onsite/'+ onsite.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
