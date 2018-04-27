@@ -1,0 +1,32 @@
+
+{
+    "iResearchApp": {
+        "files" : {
+            "home": {
+                "title": "Files",
+                "createLabel": "创建新 Files",
+                "createOrEditLabel": "创建或编辑 Files"
+            },
+            "created": "Files {{ param }} 创建成功",
+            "updated": "Files {{ param }} 更新成功",
+            "deleted": "Files {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Files {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Files"
+            },
+            "funcName": "Func Name",
+            "linkId": "Link Id",
+            "subId": "Sub Id",
+            "subId2": "Sub Id 2",
+            "authStr": "Auth Str",
+            "subType": "Sub Type",
+            "fname": "Fname",
+            "rawName": "Raw Name",
+            "fsize": "Fsize",
+            "ftype": "Ftype",
+            "remarks": "Remarks"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+
+{
+    "iResearchApp": {
+        "onsite" : {
+            "home": {
+                "title": "Onsites",
+                "createLabel": "创建新 Onsite",
+                "createOrEditLabel": "创建或编辑 Onsite"
+            },
+            "created": "Onsite {{ param }} 创建成功",
+            "updated": "Onsite {{ param }} 更新成功",
+            "deleted": "Onsite {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Onsite {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Onsite"
+            },
+            "report": "Report",
+            "onsiteTime": "Onsite Time",
+            "accompany": "Accompany",
+            "onsiteAddr": "Onsite Addr",
+            "onsiteInfo": "Onsite Info",
+            "targetId": "Target Id",
+            "targetName": "Target Name",
+            "surveyType": "Survey Type",
+            "infoType": "Info Type",
+            "adviceDeptId": "Advice Dept Id",
+            "adviceReadTime": "Advice Read Time",
+            "adviceReadUuid": "Advice Read Uuid",
+            "adviceStatus": "Advice Status",
+            "department": "Department"
+        }
+    }
+}

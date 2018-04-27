@@ -1,0 +1,24 @@
+
+{
+    "iResearchApp": {
+        "acl" : {
+            "home": {
+                "title": "Acls",
+                "createLabel": "创建新 Acl",
+                "createOrEditLabel": "创建或编辑 Acl"
+            },
+            "created": "Acl {{ param }} 创建成功",
+            "updated": "Acl {{ param }} 更新成功",
+            "deleted": "Acl {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Acl {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Acl"
+            },
+            "modName": "Mod Name",
+            "funcName": "Func Name",
+            "aclList": "Acl List"
+        }
+    }
+}

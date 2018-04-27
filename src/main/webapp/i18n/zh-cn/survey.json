@@ -1,0 +1,32 @@
+
+{
+    "iResearchApp": {
+        "survey" : {
+            "home": {
+                "title": "Surveys",
+                "createLabel": "创建新 Survey",
+                "createOrEditLabel": "创建或编辑 Survey"
+            },
+            "created": "Survey {{ param }} 创建成功",
+            "updated": "Survey {{ param }} 更新成功",
+            "deleted": "Survey {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Survey {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Survey"
+            },
+            "surveyType": "Survey Type",
+            "targetTypeReadme": "Target Type Readme",
+            "targetType": "Target Type",
+            "targetContactInfo": "Target Contact Info",
+            "targetContactPerson": "Target Contact Person",
+            "targetName": "Target Name",
+            "targetId": "Target Id",
+            "deptContactInfo": "Dept Contact Info",
+            "deptContactPerson": "Dept Contact Person",
+            "surveyDate": "Survey Date",
+            "department": "Department"
+        }
+    }
+}

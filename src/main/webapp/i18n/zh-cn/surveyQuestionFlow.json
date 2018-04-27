@@ -1,0 +1,24 @@
+
+{
+    "iResearchApp": {
+        "surveyQuestionFlow" : {
+            "home": {
+                "title": "Survey Question Flows",
+                "createLabel": "创建新 Survey Question Flow",
+                "createOrEditLabel": "创建或编辑 Survey Question Flow"
+            },
+            "created": "Survey Question Flow {{ param }} 创建成功",
+            "updated": "Survey Question Flow {{ param }} 更新成功",
+            "deleted": "Survey Question Flow {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Survey Question Flow {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Survey Question Flow"
+            },
+            "confirm": "Confirm",
+            "remarks": "Remarks",
+            "surveyQuestion": "Survey Question"
+        }
+    }
+}

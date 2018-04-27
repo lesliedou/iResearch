@@ -1,0 +1,28 @@
+
+{
+    "iResearchApp": {
+        "target" : {
+            "home": {
+                "title": "Targets",
+                "createLabel": "创建新 Target",
+                "createOrEditLabel": "创建或编辑 Target"
+            },
+            "created": "Target {{ param }} 创建成功",
+            "updated": "Target {{ param }} 更新成功",
+            "deleted": "Target {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Target {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Target"
+            },
+            "targetName": "Target Name",
+            "targetType": "Target Type",
+            "targetTypeReadme": "Target Type Readme",
+            "contactPerson": "Contact Person",
+            "contactPhone": "Contact Phone",
+            "contactEmail": "Contact Email",
+            "contactAddr": "Contact Addr"
+        }
+    }
+}

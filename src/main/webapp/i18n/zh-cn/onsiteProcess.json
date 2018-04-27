@@ -1,0 +1,24 @@
+
+{
+    "iResearchApp": {
+        "onsiteProcess" : {
+            "home": {
+                "title": "Onsite Processes",
+                "createLabel": "创建新 Onsite Process",
+                "createOrEditLabel": "创建或编辑 Onsite Process"
+            },
+            "created": "Onsite Process {{ param }} 创建成功",
+            "updated": "Onsite Process {{ param }} 更新成功",
+            "deleted": "Onsite Process {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Onsite Process {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Onsite Process"
+            },
+            "confirm": "Confirm",
+            "remarks": "Remarks",
+            "onsite": "Onsite"
+        }
+    }
+}

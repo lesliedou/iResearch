@@ -1,0 +1,39 @@
+
+{
+    "iResearchApp": {
+        "monthlyReport" : {
+            "home": {
+                "title": "Monthly Reports",
+                "createLabel": "创建新 Monthly Report",
+                "createOrEditLabel": "创建或编辑 Monthly Report"
+            },
+            "created": "Monthly Report {{ param }} 创建成功",
+            "updated": "Monthly Report {{ param }} 更新成功",
+            "deleted": "Monthly Report {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Monthly Report {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Monthly Report"
+            },
+            "monthName": "Month Name",
+            "report": "Report",
+            "reportTime": "Report Time",
+            "reportDate": "Report Date",
+            "count": "Count",
+            "surveyDeptCount": "Survey Dept Count",
+            "surveyCount": "Survey Count",
+            "surveyTargetCountJson": "Survey Target Count Json",
+            "surveyTargetCountTotal": "Survey Target Count Total",
+            "surveyTypeCountJson": "Survey Type Count Json",
+            "surveyTypeCountTotal": "Survey Type Count Total",
+            "questionCcountJson": "Question Ccount Json",
+            "questionCountTotal": "Question Count Total",
+            "questionClosedCountJson": "Question Closed Count Json",
+            "questionClosedCountTota": "Question Closed Count Tota",
+            "proposalCountJson": "Proposal Count Json",
+            "proposalCountTotal": "Proposal Count Total",
+            "department": "Department"
+        }
+    }
+}

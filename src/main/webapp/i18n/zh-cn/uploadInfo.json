@@ -1,0 +1,25 @@
+
+{
+    "iResearchApp": {
+        "uploadInfo" : {
+            "home": {
+                "title": "Upload Infos",
+                "createLabel": "创建新 Upload Info",
+                "createOrEditLabel": "创建或编辑 Upload Info"
+            },
+            "created": "Upload Info {{ param }} 创建成功",
+            "updated": "Upload Info {{ param }} 更新成功",
+            "deleted": "Upload Info {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Upload Info {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Upload Info"
+            },
+            "infoType": "Info Type",
+            "subj": "Subj",
+            "content": "Content",
+            "department": "Department"
+        }
+    }
+}

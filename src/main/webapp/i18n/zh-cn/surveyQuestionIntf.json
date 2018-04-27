@@ -1,0 +1,37 @@
+
+{
+    "iResearchApp": {
+        "surveyQuestionIntf" : {
+            "home": {
+                "title": "Survey Question Intfs",
+                "createLabel": "创建新 Survey Question Intf",
+                "createOrEditLabel": "创建或编辑 Survey Question Intf"
+            },
+            "created": "Survey Question Intf {{ param }} 创建成功",
+            "updated": "Survey Question Intf {{ param }} 更新成功",
+            "deleted": "Survey Question Intf {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Survey Question Intf {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Survey Question Intf"
+            },
+            "taskID": "Task ID",
+            "statusType": "Status Type",
+            "returnTime": "Return Time",
+            "returnNote": "Return Note",
+            "createTime": "Create Time",
+            "allEndTime": "All End Time",
+            "createNote": "Create Note",
+            "endTime": "End Time",
+            "lastSolvingTime": "Last Solving Time",
+            "solvingNote": "Solving Note",
+            "endNote": "End Note",
+            "banliResult": "Banli Result",
+            "executeDeptName": "Execute Dept Name",
+            "assistantDeptName": "Assistant Dept Name",
+            "feedBackNote": "Feed Back Note",
+            "surveyQuestion": "Survey Question"
+        }
+    }
+}

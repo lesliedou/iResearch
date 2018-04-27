@@ -1,0 +1,24 @@
+
+{
+    "iResearchApp": {
+        "configAcl" : {
+            "home": {
+                "title": "Config Acls",
+                "createLabel": "创建新 Config Acl",
+                "createOrEditLabel": "创建或编辑 Config Acl"
+            },
+            "created": "Config Acl {{ param }} 创建成功",
+            "updated": "Config Acl {{ param }} 更新成功",
+            "deleted": "Config Acl {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Config Acl {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Config Acl"
+            },
+            "modName": "Mod Name",
+            "funcName": "Func Name",
+            "aclList": "Acl List"
+        }
+    }
+}

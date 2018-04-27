@@ -1,0 +1,57 @@
+
+{
+    "iResearchApp": {
+        "surveyQuestion" : {
+            "home": {
+                "title": "Survey Questions",
+                "createLabel": "创建新 Survey Question",
+                "createOrEditLabel": "创建或编辑 Survey Question"
+            },
+            "created": "Survey Question {{ param }} 创建成功",
+            "updated": "Survey Question {{ param }} 更新成功",
+            "deleted": "Survey Question {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Survey Question {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Survey Question"
+            },
+            "targetId": "Target Id",
+            "targetName": "Target Name",
+            "surveyCode": "Survey Code",
+            "subSeq": "Sub Seq",
+            "report": "Report",
+            "reportTime": "Report Time",
+            "questionSummary": "Question Summary",
+            "questionType": "Question Type",
+            "questionInfo": "Question Info",
+            "deptPlan": "Dept Plan",
+            "deptPlanType": "Dept Plan Type",
+            "deptPlanExtra": "Dept Plan Extra",
+            "questionStatus": "Question Status",
+            "masterDeptId": "Master Dept Id",
+            "auxDeptId": "Aux Dept Id",
+            "officePlan": "Office Plan",
+            "officePlanJson": "Office Plan Json",
+            "officeSubmitUuid": "Office Submit Uuid",
+            "officeSubmitTime": "Office Submit Time",
+            "leaderConfirm": "Leader Confirm",
+            "leaderConfirmTime": "Leader Confirm Time",
+            "leaderRemarks": "Leader Remarks",
+            "leaderSubmitUuid": "Leader Submit Uuid",
+            "leaderSubmitTime": "Leader Submit Time",
+            "rstProcedure": "Rst Procedure",
+            "rstOutcome": "Rst Outcome",
+            "rstDate": "Rst Date",
+            "rstTarget": "Rst Target",
+            "flowStatus": "Flow Status",
+            "inputDeptId": "Input Dept Id",
+            "inputUser": "Input User",
+            "inputPhone": "Input Phone",
+            "inputTime": "Input Time",
+            "survey": "Survey",
+            "onsite": "Onsite",
+            "department": "Department"
+        }
+    }
+}
