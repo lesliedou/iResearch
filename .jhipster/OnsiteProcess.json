@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "onsite",
+            "otherEntityName": "onsite",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "onsiteProcess"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "confirm",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "remarks",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180426134825",
+    "entityTableName": "onsite_process",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

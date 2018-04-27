@@ -1,0 +1,169 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "survey",
+            "otherEntityName": "surveyQuestion",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "surveyQuestion"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "onsite",
+            "otherEntityName": "onsite",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "surveyQuestion"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "department",
+            "otherEntityName": "department",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "surveyQuestion"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "targetId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surveyCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subSeq",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "report",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reportTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "questionSummary",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "questionType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "questionInfo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deptPlan",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deptPlanType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deptPlanExtra",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "questionStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "masterDeptId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "auxDeptId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officePlan",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officePlanJson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officeSubmitUuid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officeSubmitTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "leaderConfirm",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "leaderConfirmTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "leaderRemarks",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "leaderSubmitUuid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "leaderSubmitTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rstProcedure",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rstOutcome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rstDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rstTarget",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "flowStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inputDeptId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inputUser",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inputPhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inputTime",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180426134828",
+    "entityTableName": "survey_question",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

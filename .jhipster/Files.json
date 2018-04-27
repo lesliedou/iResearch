@@ -1,0 +1,56 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "funcName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "linkId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subId2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "authStr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rawName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fsize",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ftype",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "remarks",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180426134832",
+    "entityTableName": "files",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

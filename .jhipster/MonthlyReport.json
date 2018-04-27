@@ -1,0 +1,89 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "department",
+            "otherEntityName": "department",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "monthlyReport"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "monthName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "report",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reportTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reportDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "count",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surveyDeptCount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surveyCount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surveyTargetCountJson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surveyTargetCountTotal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surveyTypeCountJson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surveyTypeCountTotal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "questionCcountJson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "questionCountTotal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "questionClosedCountJson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "questionClosedCountTota",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "proposalCountJson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "proposalCountTotal",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180426134822",
+    "entityTableName": "monthly_report",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

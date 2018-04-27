@@ -1,0 +1,73 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "department",
+            "otherEntityName": "department",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "onsite"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "report",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "onsiteTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accompany",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "onsiteAddr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "onsiteInfo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surveyType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "infoType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adviceDeptId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adviceReadTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adviceReadUuid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adviceStatus",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180426134824",
+    "entityTableName": "onsite",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

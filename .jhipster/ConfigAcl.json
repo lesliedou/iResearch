@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "modName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "funcName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "aclList",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "changelogDate": "20180426134818",
+    "entityTableName": "config_acl",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

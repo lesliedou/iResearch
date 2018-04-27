@@ -1,0 +1,81 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "surveyQuestion",
+            "otherEntityName": "surveyQuestion",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "surveyQuestionIntf"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "taskID",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statusType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "returnTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "returnNote",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "allEndTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createNote",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastSolvingTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "solvingNote",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "endNote",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "banliResult",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "executeDeptName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "assistantDeptName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "feedBackNote",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180426134830",
+    "entityTableName": "survey_question_intf",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

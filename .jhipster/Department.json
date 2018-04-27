@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "deptName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deptCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deptType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactPerson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactInfo",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180426134820",
+    "entityTableName": "department",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

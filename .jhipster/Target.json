@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "targetName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetTypeReadme",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactPerson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactPhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactAddr",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180426134831",
+    "entityTableName": "target",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

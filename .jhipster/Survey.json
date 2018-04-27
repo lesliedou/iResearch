@@ -1,0 +1,61 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "department",
+            "otherEntityName": "department",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "survey"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "surveyType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetTypeReadme",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetContactInfo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetContactPerson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deptContactInfo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deptContactPerson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surveyDate",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180426134827",
+    "entityTableName": "survey",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}
